@@ -4,7 +4,19 @@
 
 {% block body %}
     <h1>Liste des films</h1>
-    {% for film in films %}
-        <li><a href={{ path("app_films_find",{"id":film.id}) }}>{{ film.titre }}</a></li>
-    {% endfor %}
+    <ul style="display: flex; flex-direction: row; gap: 20px; list-style: none;flex-wrap: wrap; ">
+        {% for film in films %}
+            <li>
+                <div class="card" style="max-width: 20rem;">
+                    <a style="text-decoration: none;" href={{ path("app_films_find",{"id":film.id}) }}>
+                        <div class="card-body">
+                            <h4 class="card-title">{{ film.titre }}</h4>
+                            <p style="color: black" class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                                rhoncus aliquam efficitur.</p>
+                        </div>
+                    </a>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
 {% endblock %}
