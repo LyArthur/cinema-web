@@ -17,8 +17,8 @@
 {{ include('_partials/_menu.html.twig') }}
 
 <div class="container">
-    {# Afficher les messages flash #}
     {% for label,messages in app.flashes %}
+        <p>aaaaaaaaaaaaaaaaaaaaaaaaa</p>
         {% for message in messages %}
             <div class="mt-2 mb-2 alert alert-{{ label }} fw-bold">{{ message }}</div>
         {% endfor %}
