@@ -7,12 +7,19 @@
     <ul style="display: flex; flex-direction: row; gap: 20px; list-style: none;flex-wrap: wrap; ">
         {% for film in films %}
             <li>
-                <div class="card" style="max-width: 20rem;">
+                <div class="card">
                     <a style="text-decoration: none;" href={{ path("app_films_find",{"id":film.id}) }}>
-                        <div class="card-body">
+                        <div class="card-body" style="max-width: 18.5rem; aspect-ratio: 1/1; position: relative;">
                             <h4 class="card-title">{{ film.titre }}</h4>
-                            <p style="color: black" class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                            <p style="color: black;
+                            margin-bottom: 5px;
+                            font-family:  -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';"
+                               class="card-text">Lorem ipsum dolor sit amet,
+                                consectetur adipiscing elit. Maecenas
                                 rhoncus aliquam efficitur.</p>
+                            <p style="color: black; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';"
+                               class="card-text">Durée : {{ film.duree//60 }}h{{ film.duree%60 }}</p>
+                            <button style="position: absolute; bottom: 20px; right: 20px;" type="button" class="btn btn-primary">Détails</button>
                         </div>
                     </a>
                 </div>

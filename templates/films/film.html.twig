@@ -7,7 +7,7 @@
     <ul style="display: flex; flex-direction: column; gap: 20px; list-style: none;">
         {% for seance in data.seances %}
             <li>
-                <h4> {{ seance.salle.nom }}</h4>
+                <h4> Salle {{ seance.salle.nom }}</h4>
                 <h6>Date : {{ seance.dateProjection | date("d/m/Y, H:i") }}</h6>
                 <p>Tarif normal : {{ seance.tarifNormal }} €</p>
                 <p>Tarif réduit (abonné) : {{ seance.tarifReduit }} €</p>

@@ -18,11 +18,12 @@ class UserType extends AbstractType {
 
             ->add("password", TextType::class, ["label" => "Mot de passe",
                 "label_attr" => ["class" => "form-label mt-4"],
-                "attr" => ["placeholder" => "1234", "class" => "form-control"]])
+                "attr" => ["placeholder" => "UnMotDePasseSur1234!:", "class" => "form-control"],
+                'help' => "Le mot de passe doit contenir au moins une minuscule, une majuscule, un chiffre et un caractère spécial (?;!:=)"])
 
             ->add("confirmPassword", TextType::class, ["label" => "Confirmez votre mot de passe",
                 "label_attr" => ["class" => "form-label mt-4"],
-                "attr" => ["placeholder" => "1234", "class" => "form-control"]]);
+                "attr" => ["placeholder" => "UnMotDePasseSur1234!:", "class" => "form-control"]]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void {
