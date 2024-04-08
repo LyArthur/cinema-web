@@ -6,6 +6,7 @@ use App\API\ApiCinema;
 use App\Form\UserType;
 use App\Model\UserModel;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\FormError;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -22,7 +23,7 @@ class UserController extends AbstractController {
             $data = $form->getData();
             $response = $apiCinema->register($data->email, $data->password, $data->confirmPassword);
             if ($response["code"] !== 201) {
-                //Todo gérer l'erreur
+                $form->addError(new FormError($response["message"]));
             } else {
                 $this->addFlash("success", "Le compte a bien été enregistré");
                 return $this->redirectToRoute("app_accueil");

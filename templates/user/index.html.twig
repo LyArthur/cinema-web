@@ -4,6 +4,13 @@
 
 {% block body %}
     {{ form_start(form) }}
+    {% if form.vars.errors|length > 0 %}
+        <ul>
+            {% for error in form.vars.errors %}
+                <li>{{ error.message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
         {{ form_row(form.email) }}
         {{ form_row(form.password) }}
         {{ form_row(form.confirmPassword) }}
